@@ -35,28 +35,15 @@
   #head .container {
     padding: 12px 8px;
   }
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    background: #003759;
-    padding: 10px 0;
-    border-radius: 8px;
-    width: 100%;
-    align-items: flex-start;
-  }
-  nav ul li a {
-    font-size: 20px;
-    padding: 6px 0;
-  }
   .btn-contato {
     gap: 6px;
   }
-  .logo img {
-    max-height: 55px;
+  .logo img { 
+    max-height: 27px;
   }
   .footer-logo-text img {
-    width: 65px;
-    height: 65px;
+    width: 32px;
+    height: 32px;
   }
   .footer-map iframe {
     width: 100% !important;
@@ -67,7 +54,7 @@
     padding: 0 4px;
   }
   .fachada {
-    height: 45vh;
+    height: 55vh;
     font-size: 1.1rem;
     margin-top: 60px;
     padding: 10px;
@@ -93,16 +80,13 @@
     margin-top: 55px;
     padding: 6px;
   }
-  nav ul li a {
-    font-size: 16px;
-  }
   .btn-contato a {
-    width: 38px;
-    height: 38px;
+    width: 19px;
+    height: 19px;
     font-size: 16px;
   }
   .btn-contato i {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 * {
