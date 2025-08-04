@@ -281,15 +281,15 @@ nav ul li a {
 
 @media (max-width: 360px) {
   .btn-contato a {
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
   }
 
   .btn-contato i {
-    font-size: 18px;
+    font-size: 9px;
   }
 
   .logo img {
-    max-height: 36px;
+    max-height: 18px;
   }
 }
