@@ -33,22 +33,22 @@
     align-items: flex-start;
   }
   #head .container {
-    padding: 6px 4px;
-    max-width: 600px;
+    padding: 2px 2px;
+    max-width: 320px;
   }
   .btn-contato {
-    gap: 3px;
+    gap: 1px;
   }
   .btn-contato a {
-    width: 25px;
-    height: 25px;
-    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    font-size: 7px;
   }
   .btn-contato i {
-    font-size: 21px;
+    font-size: 10px;
   }
   .logo img { 
-    max-height: 40px;
+    max-height: 18px;
   }
   .footer-logo-text img {
     width: 32px;
@@ -85,18 +85,18 @@
     padding: 10px 0;
   }
   .fachada {
-    font-size: 0.95rem;
-    margin-top: 26px;
-    height: calc(100vh - 26px);
-    padding: 6px;
+    font-size: 0.85rem;
+    margin-top: 16px;
+    height: calc(100vh - 16px);
+    padding: 3px;
   }
   .btn-contato a {
-    width: 13px;
-    height: 13px;
-    font-size: 8px;
+    width: 8px;
+    height: 8px;
+    font-size: 5px;
   }
   .btn-contato i {
-    font-size: 12px;
+    font-size: 7px;
   }
 }
 * {
@@ -276,15 +276,13 @@ nav ul li a {
 
 @media (max-width: 360px) {
   .btn-contato a {
-    width: 15px;
-    height: 15px;
+    width: 6px;
+    height: 6px;
   }
-
   .btn-contato i {
-    font-size: 9px;
+    font-size: 4px;
   }
-
   .logo img {
-    max-height: 18px;
+    max-height: 10px;
   }
 }
