@@ -29,17 +29,26 @@
 @media (max-width: 700px) {
   #head .d-flex {
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     align-items: flex-start;
   }
   #head .container {
-    padding: 12px 8px;
+    padding: 6px 4px;
+    max-width: 600px;
   }
   .btn-contato {
-    gap: 6px;
+    gap: 3px;
+  }
+  .btn-contato a {
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+  }
+  .btn-contato i {
+    font-size: 21px;
   }
   .logo img { 
-    max-height: 27px;
+    max-height: 40px;
   }
   .footer-logo-text img {
     width: 32px;
@@ -54,17 +63,17 @@
     padding: 0 4px;
   }
   .fachada {
-    height: 55vh;
+    height: calc(100vh - 52px);
     font-size: 1.1rem;
-    margin-top: 60px;
+    margin-top: 52px;
     padding: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .footer-logo-text img {
-    width: 48px;
-    height: 48px;
+    width: 24px;
+    height: 24px;
   }
   .footer-logo-text p {
     font-size: 13px;
@@ -77,16 +86,17 @@
   }
   .fachada {
     font-size: 0.95rem;
-    margin-top: 55px;
+    margin-top: 26px;
+    height: calc(100vh - 26px);
     padding: 6px;
   }
   .btn-contato a {
-    width: 19px;
-    height: 19px;
-    font-size: 16px;
+    width: 13px;
+    height: 13px;
+    font-size: 8px;
   }
   .btn-contato i {
-    font-size: 24px;
+    font-size: 12px;
   }
 }
 * {
@@ -169,6 +179,7 @@ main {
 }
 
 /* Ajusta a largura máxima do conteúdo do header */
+/* Ajuste para mobile: largura do header reduzida */
 #head .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -254,13 +265,13 @@ nav ul li a {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Altura total da viewport */
+    height: calc(100vh - 65px); /* Altura total da viewport menos header */
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
-    margin-top: 65px; /* Distância do topo */
+    margin-top: 65px; /* Distância do topo igual ao header */
 }
 
 @media (max-width: 360px) {
