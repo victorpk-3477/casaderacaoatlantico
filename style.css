@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(0, 110, 255, 0.199), rgba(0, 110, 255, 0.479)),
+              url('MD1_4003\ \(1\).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header .container {
+  width: 100%; /* largura total do container */
+  margin: 0 auto;/* centraliza o container */
+  padding: 0 auto;/* espaçamento interno */
+  display: flex;/* usa flexbox para layout */
+  background: #003759;/* cor de fundo do cabeçalho */
+  height: 120px; /* altura do cabeçalho */
+  align-items: center; /* alinha os itens verticalmente ao centro */
+  justify-content: space-around; /* espaça os itens igualmente */
+  position: fixed; /* fixa o cabeçalho no topo */
+  top: 0; /* posiciona no topo */
+  z-index: 1000; /* garante que o cabeçalho fique acima dos outros elementos */
+}
+  img {
+  width: 350px; /* largura da imagem */
+  height: auto; /* mantém a proporção */
+  margin: auto; /* centraliza a imagem */
+  display: flex; /* usa flexbox para layout */
+}
+img.fachada {
+  margin-top: 120px; /* espaçamento para não sobrepor o cabeçalho fixo */
+  width: 100%; /* largura total da imagem */
+  height: auto; /* mantém a proporção da imagem */
+  display: block; /* garante que a imagem seja tratada como um bloco */
+  }
+.btn-whatsapp {
+  background-color: #25D366; /* Cor de fundo verde do WhatsApp */
+  color: white; /* Cor do texto */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  text-decoration: none; /* Remove o sublinhado do link */
+  font-weight: bold; /* Deixa o texto em negrito */
+  display: flex; /* Usa flexbox para alinhar itens */
+  align-items: center; /* Alinha verticalmente ao centro */
+  gap: 10px; /* Espaçamento entre o ícone e o texto */
+}
+.btn-whatsapp:hover {
+  background-color: #128C7E; /* Cor de fundo ao passar o mouse */
+  text-decoration: none; /* Remove o sublinhado do link ao passar o mouse */
+}
+.btn-whatsapp i {
+  font-size: 30px; /* Tamanho do ícone */
+}
+footer{
+  position: relative; /* Permite que o rodapé se posicione relativo ao seu conteúdo */
+  background-color: #003759; /* Cor de fundo do rodapé */
+  color: #ffffff; /* Cor do texto */
+}
+.footer-content {
+  justify-content: space-between; /* Espaça os itens igualmente */
+  align-content: center; /* Alinha os itens verticalmente ao centro */
+  padding: 20px; /* Adiciona preenchimento */
+  display: flex; /* Usa flexbox para layout */
+}
+
+.footer-info {
+  display: flex; /* Usa flexbox para layout */
+  flex-direction: row; /* Alinha os itens em linha */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  justify-content: space-between; /* Espaça os itens igualmente */
+}
+.footer-info img.logo-roda-pe {
+  width: 100px; /* largura da logo */
+  height: auto; /* mantém a proporção */
+  margin-right: 200px; /* espaçamento à direita */
+}
+.footer-map {
+  border-radius: 50px; /* Adiciona bordas arredondadas */
+}
+.footer-info-text {
+  color: #ffffff; /* Cor do texto */
+  font-size: 16px; /* Tamanho da fonte */
+  line-height: 1.7; /* Altura da linha */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+.footer-info-text i {
+  color: #ffffff; /* Cor do ícone */
+  margin-right: 5px; /* Espaçamento à direita do ícone */
+} 
+.footer-credito {
+  text-align: center; /* Alinha o texto ao centro */
+  padding: 5px 0; /* Adiciona preenchimento */
+}
+.footer-social {
+  display: flex; /* Usa flexbox para layout */
+  justify-content: left; /* Alinha os itens à esquerda */
+  margin-top: 10px; /* Espaçamento superior */
+}
+.footer-social a {
+  color: #ffffff; /* Cor dos ícones */
+  margin: 0 5px; /* Espaçamento lateral */
+  font-size: 24px; /* Tamanho dos ícones */
+}
+section#section-content {
+  margin-top: 40px;
+  display: flex;
+  align-items: start; /* Alinha os itens verticalmente ao topo */
+  justify-content: space-between; /* Espaço entre as colunas */
+  gap: 100px; /* Espaço entre as colunas */
+  max-width: 1400px; /* Largura máxima da seção */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Alinha o texto ao centro */
+  margin-top: 20px;
+  background-color: rgba(15, 114, 28, 0.61);
+  padding: 50px; /* Adiciona preenchimento */
+  border-radius: 20px; /* Adiciona bordas arredondadas */
+  color: #ffffff; /* Cor do texto */
+}
+.title {
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-weight: 700; /* Peso da fonte */
+    font-size: 30px; /* Tamanho da fonte */
+    margin-bottom: 50px; /* Espaçamento inferior */
+    color: #ffffff;
+}
+.section-left {
+  color: #000000; /* Cor do texto */
+  line-height: 1; /* Altura da linha */
+  max-width: 100vw; /* impede ultrapassar a largura da tela */
+  overflow-x: hidden; /* esconde qualquer conteúdo que ultrapasse */
+}
+.section-right {
+  color: #000000; /* Cor do texto */
+  line-height: 1; /* Altura da linha */
+  max-width: 100vw; /* impede ultrapassar a largura da tela */
+  overflow-x: hidden; /* esconde qualquer conteúdo que ultrapasse */
+}
+        /* --- Estilo do carrossel --- */
+.carrossel {
+  position: relative; /* permite o posicionamento absoluto dos itens internos */
+  max-width: 800px; /* largura máxima do carrossel */
+  margin: 20px auto; /* centraliza o carrossel */
+  overflow: hidden;
+  border-radius: 10px;
+}
+.carrossel-container {
+  width: 100%; /* garante que o container ocupe toda a largura disponível */
+  height: 600px; /* ajuste a altura conforme desejar */
+  display: flex; /* usa flexbox para layout */
+  align-items: center; /* alinha os itens verticalmente ao centro */
+  transition: transform 0.5s ease; /* animação suave ao mudar de item */
+  position: flex; /* permite o posicionamento absoluto dos itens internos */
+}
+.carrossel-item {
+  min-width: 100%; /* garante que cada item ocupe toda a largura do container */
+  box-sizing: border-box; /* garante que o padding e border sejam incluídos na largura total */
+}
+.carrossel-item img {
+  width: 100%; /* garante que a imagem ocupe 100% da largura do container */
+  height: 100%; /* garante que a imagem ocupe toda a altura do container */
+  object-fit: contain; /* mantém a proporção da imagem */
+  display: block; /* garante que a imagem seja tratada como um bloco */
+  padding: auto; /* centraliza a imagem */
+  background: #fff; /* fundo branco para as bordas */
+  border-radius: 10px; /* bordas arredondadas */
+  
+}
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+}
+  .prev { left: 10px; }
+  .next { right: 10px; }
+  .prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.quem-somos {
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background-color: rgba(15, 114, 28, 0.61);
+  border-radius: 20px; /* Adiciona bordas arredondadas */
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px; /* Largura máxima do título */
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 700; /* Peso da fonte */
+  color: #ffffff; /* Cor do texto */
+}
+.quem-somos-descricao {
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: justify;
+  color: #ffffff;
+}
+
+/* ===== Responsividade ===== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    header .container {
+        flex-direction: line; /* empilha os itens */
+        padding: 5px; /* padding interno */
+        height: 100px; /* altura automática */
+    }
+    img.fachada {
+        margin-top: 100px; /* espaçamento para não sobrepor o cabeçalho fixo */
+    }
+    .footer-content {
+        flex-direction: column; /* alinha os itens em coluna */
+    }
+    .footer-info {
+        flex-direction: column; /* alinha os itens em coluna */
+        align-items: center; /* centraliza os itens */
+    }
+    .logo {
+        max-width: 90%;
+        height: auto;
+    }
+    .quem-somos-descricao {
+        font-size: 20px;
+        padding: 10px;
+    }
+    .section-left {
+        padding: 0px;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+    section#section-content {
+        padding: 0; /* reduz o padding */
+    }
+    .title {
+        margin-bottom: 5px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    .quem-somos {
+        font-size: 30px;
+    }
+    section#section-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .btn-whatsapp {
+        padding: 8px 15px;
+        font-size: 10px;
+    }
+    .btn-whatsapp i {
+        font-size: 15px;
+    }
+    .carrossel {
+        max-width: 100%;
+    }
+
+}
+
+/* Telas muito pequenas */
+@media (max-width: 480px) {
+    .quem-somos {
+        font-size: 24px;
+    }
+    .footer-info img.logo-roda-pe {
+        margin-right: 0;
+    }
+}
