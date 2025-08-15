@@ -28,9 +28,9 @@
     });
 
     // Passa automaticamente a cada 3 segundos
-    let autoSlide = setInterval(nextSlide, 3000);
+    let autoSlide = setInterval(nextSlide, 10000);
 
     function resetAutoSlide() {
         clearInterval(autoSlide);
-        autoSlide = setInterval(nextSlide, 3000);
+        autoSlide = setInterval(nextSlide, 10000);
     };
