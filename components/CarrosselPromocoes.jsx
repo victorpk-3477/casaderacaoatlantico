@@ -2,6 +2,7 @@
 
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
+import { withPublicPath } from '@/lib/publicPath';
 
 const promocoes = [
   'promo1.jpeg',
@@ -48,11 +49,11 @@ export default function CarrosselPromocoes() {
       {promocoes.map((image) => (
         <div key={image} className="keen-slider__slide cra-carrossel-item">
           <img
-            src={`/Promocao/${image}`}
+            src={withPublicPath(`/Promocao/${image}`)}
             alt={`Promoção ${image}`}
             loading="lazy"
             onError={(e) => {
-              e.target.src = '/placeholder.jpg';
+              e.target.src = withPublicPath('/placeholder.jpg');
             }}
           />
         </div>

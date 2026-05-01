@@ -10,12 +10,13 @@ import React, {
 } from 'react';
 import { reducer } from '@/lib/whatsappReducer';
 import { WhatsappSVG, CloseSVG, CheckSVG, SendSVG } from './Icons';
+import { withPublicPath } from '@/lib/publicPath';
 import './FloatingWhatsApp.css';
 
-const dummyAvatar = '/avatar-whatsapp.jpg';
-const notificationSoundSrc = '/whatsapp-notification.mp3';
-const bgChatDark = '/bg-chat-tile-dark.png';
-const bgChatLight = '/bg-chat-tile-light.png';
+const dummyAvatar = withPublicPath('/avatar-whatsapp.jpg');
+const notificationSoundSrc = withPublicPath('/whatsapp-notification.mp3');
+const bgChatDark = withPublicPath('/bg-chat-tile-dark.png');
+const bgChatLight = withPublicPath('/bg-chat-tile-light.png');
 
 export function FloatingWhatsApp({
   onClick,

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { formatProductName, ordenarProdutosPorPrioridade, atualizarPrioridadeProduto, moverProduto } from '@/lib/produtosUtils';
+import { withPublicPath } from '@/lib/publicPath';
 
 export default function GerenciadorPrioridades({ produtos, onProdutosChange }) {
   const [modoEdicao, setModoEdicao] = useState(false);
@@ -108,7 +109,7 @@ export default function GerenciadorPrioridades({ produtos, onProdutosChange }) {
             </span>
 
             <img
-              src={produto.imagem}
+              src={withPublicPath(produto.imagem)}
               alt={formatProductName(produto.nome)}
               style={{ width: '40px', height: '40px', objectFit: 'contain', margin: '0 10px' }}
             />

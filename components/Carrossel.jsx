@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { withPublicPath } from '@/lib/publicPath';
 
 const fotos = [
   1, 2, 3, 5, 6, 7, 9, 10, 11, 13, 15, 17, 19, 20, 22, 25, 26, 33, 34, 35,
@@ -37,7 +38,7 @@ export default function Carrossel() {
       }}>
         {fotos.map((n) => (
           <div key={n} className="cra-carrossel-item">
-            <img src={`/Fotos/foto (${n}).jpg`} alt={`Foto ${n}`} />
+            <img src={withPublicPath(`/Fotos/foto (${n}).jpg`)} alt={`Foto ${n}`} />
           </div>
         ))}
       </div>
