@@ -6,7 +6,7 @@ export const metadata = {
   description: 'Rações, petiscos e produtos pet com o melhor preço em Goiânia. Fale conosco pelo WhatsApp.',
   keywords: 'ração em Goiânia, pet shop, petiscos, produtos para cães, produtos para gatos',
   icons: {
-    icon: '/logo.svg',
+    icon: '/logo roda pe.png',
   },
   openGraph: {
     title: 'Casa de Ração Atlântico | Ração em Goiânia',
@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
           notificationDelay={30}
           notificationLoop={2}
           notificationSound={false}
-          avatar="/logo.svg"
+          avatar="/logo roda pe.png"
         />
         {children}
       </body>

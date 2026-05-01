@@ -5,20 +5,20 @@ import 'keen-slider/keen-slider.min.css';
 import './BrandsCarousel.css';
 
 const defaultBrands = [
-  { id: 4, name: 'Fórmula Natural', folder: 'Fórmula Natural', logo: '/Produtos/Marca/formlanatural.png' },
+  { id: 1, name: 'Fórmula Natural', folder: 'Fórmula Natural', logo: '/Produtos/Marca/formlanatural.png' },
   { id: 2, name: 'Bionatura', folder: 'Bionatural', logo: '/Produtos/Marca/Bionatural.png' },
   { id: 3, name: 'Finotrato', folder: 'Finotrato', logo: '/Produtos/Marca/Finotrato.png' },
-  { id: 7, name: 'N&D', folder: 'N&D', logo: '/Produtos/Marca/n&d.png' },
+  { id: 4, name: 'N&D', folder: 'N&D', logo: '/Produtos/Marca/n&d.png' },
   { id: 5, name: 'Hills', folder: 'Hills', logo: '/Produtos/Marca/hills.avif' },
   { id: 6, name: 'Magnus', folder: 'Magnus', logo: '/Produtos/Marca/MAGNUS.png' },
-  { id: 8, name: 'Origens', folder: 'Origens', logo: '/Produtos/Marca/ORIGENS.png' },
-  { id: 9, name: 'Special Cat', folder: 'special Cat', logo: '/Produtos/Marca/SpecialCat.png' },
-  { id: 10, name: 'Special dog', folder: 'Special dog', logo: '/Produtos/Marca/SpecialDog.png' },
-  { id: 11, name: 'VittA Natural', folder: 'VittA_Natural', logo: '/Produtos/Marca/VittA_Natural.png' },
-  { id: 12, name: 'GoldeN', folder: 'GoldeN', logo: '/Produtos/Marca/golden.png' },
-  { id: 13, name: 'PremieR', folder: 'PremieR', logo: '/Produtos/Marca/Premier.png' },
-  { id: 14, name: 'PremieR_Nattu', folder: 'PremieR_Nattu', logo: '/Produtos/Marca/PremieR_Nattu.png' },
-  { id: 1, name: 'Besser', folder: 'Besser', logo: '/Produtos/Marca/Besser.png' },
+  { id: 7, name: 'Origens', folder: 'Origens', logo: '/Produtos/Marca/ORIGENS.png' },
+  { id: 8, name: 'Special Cat', folder: 'special Cat', logo: '/Produtos/Marca/SpecialCat.png' },
+  { id: 9, name: 'Special dog', folder: 'Special dog', logo: '/Produtos/Marca/SpecialDog.png' },
+  { id: 10, name: 'VittA Natural', folder: 'VittA_Natural', logo: '/Produtos/Marca/VittA_Natural.png' },
+  { id: 11, name: 'GoldeN', folder: 'GoldeN', logo: '/Produtos/Marca/golden.png' },
+  { id: 12, name: 'PremieR', folder: 'PremieR', logo: '/Produtos/Marca/Premier.png' },
+  { id: 13, name: 'PremieR_Nattu', folder: 'PremieR_Nattu', logo: '/Produtos/Marca/PremieR_Nattu.png' },
+  { id: 14, name: 'Besser', folder: 'Besser', logo: '/Produtos/Marca/Besser.png' },
 ];
 
 function AutoPlayPlugin(callback, interval) {
@@ -106,13 +106,6 @@ export default function BrandsCarousel({ brands = defaultBrands, selectedBrand =
       <div className="brands-container">
         <h2 className="brands-title">Marcas que Confiamos</h2>
         <div className="brands-slider-wrapper">
-          <button
-            className="brands-nav brands-nav-left"
-            onClick={() => scrollToDirection('left')}
-            aria-label="Rolar marcas para esquerda"
-          >
-            ‹
-          </button>
           <div ref={sliderRef} className="keen-slider brands-slider" aria-label="Carrossel de marcas">
             {trackItems.map((brand, index) => (
               <div
@@ -129,6 +122,7 @@ export default function BrandsCarousel({ brands = defaultBrands, selectedBrand =
                   }}
                 >
                   {brand.logo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={brand.logo}
                       alt={brand.name}
@@ -142,13 +136,6 @@ export default function BrandsCarousel({ brands = defaultBrands, selectedBrand =
               </div>
             ))}
           </div>
-          <button
-            className="brands-nav brands-nav-right"
-            onClick={() => scrollToDirection('right')}
-            aria-label="Rolar marcas para direita"
-          >
-            ›
-          </button>
         </div>
       </div>
     </div>
