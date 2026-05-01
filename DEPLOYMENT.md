@@ -15,14 +15,14 @@
 git init
 
 # Add remote
-git remote add origin https://github.com/seu-usuario/casaderacaoatlantico.git
+git remote add origin https://github.com/victorpk-3477/casaderacaoatlantico.git
 
 # Create initial commit
 git add .
 git commit -m "Initial commit"
 
 # Push to GitHub
-git push -u origin main
+git push -u origin master
 ```
 
 ### 2. Configurar GitHub Pages
