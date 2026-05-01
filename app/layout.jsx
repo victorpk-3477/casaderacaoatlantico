@@ -1,12 +1,17 @@
 import './globals.css';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
+import { withPublicPath } from '@/lib/publicPath';
+
+const logoPath = withPublicPath('/logo roda pe.png');
+const backgroundFachada = withPublicPath('/fachada.jpg');
+const backgroundHero = withPublicPath('/MD1_4003 (1).jpg');
 
 export const metadata = {
   title: 'Casa de Ração Atlântico | Ração em Goiânia',
   description: 'Rações, petiscos e produtos pet com o melhor preço em Goiânia. Fale conosco pelo WhatsApp.',
   keywords: 'ração em Goiânia, pet shop, petiscos, produtos para cães, produtos para gatos',
   icons: {
-    icon: '/logo roda pe.png',
+    icon: logoPath,
   },
   openGraph: {
     title: 'Casa de Ração Atlântico | Ração em Goiânia',
@@ -18,7 +23,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR">
+    <html
+      lang="pt-BR"
+      style={{
+        '--background-fachada-image': `url(${backgroundFachada})`,
+        '--background-hero-image': `url(${backgroundHero})`,
+      }}
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -45,7 +56,7 @@ export default function RootLayout({ children }) {
           notificationDelay={30}
           notificationLoop={2}
           notificationSound={false}
-          avatar="/logo roda pe.png"
+          avatar={logoPath}
         />
         {children}
       </body>

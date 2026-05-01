@@ -2,12 +2,13 @@
 'use client';
 
 import { formatProductName } from '@/lib/produtosUtils';
+import { withPublicPath } from '@/lib/publicPath';
 
 export default function ProductCard({ product }) {
   const nomeFormatado = formatProductName(product.nome);
   const whatsappMessage = `Olá, gostaria de comprar ${nomeFormatado}`;
   const whatsappUrl = `https://wa.me/556235881956?text=${encodeURIComponent(whatsappMessage)}`;
-  const productImage = encodeURI(product.imagem);
+  const productImage = encodeURI(withPublicPath(product.imagem));
 
   return (
     <div className="product-card">
@@ -15,7 +16,7 @@ export default function ProductCard({ product }) {
         src={productImage}
         alt={nomeFormatado}
         onError={(e) => {
-          e.target.src = '/placeholder.jpg';
+          e.target.src = withPublicPath('/placeholder.jpg');
         }}
       />
       <div className="product-card-content">

@@ -1,4 +1,5 @@
 import './linktree.css';
+import { withPublicPath } from '@/lib/publicPath';
 
 export const metadata = {
   title: 'Links Úteis | Casa de Ração Atlântico',
@@ -68,13 +69,15 @@ const links = [
 ];
 
 export default function LinktreePage() {
+  const getIconSrc = (icon) => withPublicPath(icon);
+
   return (
     <div className="linktree-page">
       <div className="linktree-container">
         {/* HEADER */}
         <div className="linktree-header">
           <div className="linktree-logo">
-            <img src="/logo roda pe.png" alt="Casa de Ração Atlântico" />
+            <img src={getIconSrc('/logo roda pe.png')} alt="Casa de Ração Atlântico" />
           </div>
           <h1 className="linktree-title">Casa de Ração Atlântico</h1>
           <p className="linktree-subtitle">Rações, acessórios e produtos para seu pet</p>
@@ -91,7 +94,7 @@ export default function LinktreePage() {
                 aria-label={social.title}
                 title={social.title}
               >
-                <img src={social.icon} alt={social.title} />
+                <img src={getIconSrc(social.icon)} alt={social.title} />
               </a>
             ))}
           </div>
@@ -114,7 +117,7 @@ export default function LinktreePage() {
                     color: '#fff',
                   }}
                 >
-                  <img src={link.icon} alt={link.title} />
+                  <img src={getIconSrc(link.icon)} alt={link.title} />
                 </div>
                 <div className="linktree-link-text">
                   <h3>{link.title}</h3>

@@ -3,6 +3,7 @@
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import './BrandsCarousel.css';
+import { withPublicPath } from '@/lib/publicPath';
 
 const defaultBrands = [
   { id: 1, name: 'Fórmula Natural', folder: 'Fórmula Natural', logo: '/Produtos/Marca/formlanatural.png' },
@@ -124,7 +125,7 @@ export default function BrandsCarousel({ brands = defaultBrands, selectedBrand =
                   {brand.logo ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
-                      src={brand.logo}
+                      src={withPublicPath(brand.logo)}
                       alt={brand.name}
                       title={brand.name}
                       className="brand-logo"

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import './Header.css';
+import { withPublicPath } from '@/lib/publicPath';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function Header() {
       <Link href="/" onClick={closeMenu}>
         <img
           className="cra-logo"
-          src="/logo.svg"
+          src={withPublicPath('/logo.svg')}
           alt="Logo Casa de Ração Atlântico"
         />
       </Link>

@@ -1,5 +1,7 @@
 'use client';
 
+import { withPublicPath } from '@/lib/publicPath';
+
 export default function Footer() {
   return (
     <footer className="cra-footer">
@@ -7,7 +9,7 @@ export default function Footer() {
         <div className="cra-footer-info">
           <div className="cra-footer-info-logo">
             <img
-              src="/logo roda pe.png"
+              src={withPublicPath('/logo roda pe.png')}
               alt="Logo Casa de Ração Atlântico"
             />
             <div className="cra-footer-social">
