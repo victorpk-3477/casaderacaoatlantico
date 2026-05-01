@@ -1,10 +1,9 @@
 import './globals.css';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
-import { withPublicPath } from '@/lib/publicPath';
 
-const logoPath = withPublicPath('/logo roda pe.png');
-const backgroundFachada = withPublicPath('/fachada.jpg');
-const backgroundHero = withPublicPath('/MD1_4003 (1).jpg');
+const logoPath = '/logo roda pe.png';
+const backgroundFachada = '/fachada.jpg';
+const backgroundHero = '/MD1_4003 (1).jpg';
 
 export const metadata = {
   title: 'Casa de Ração Atlântico | Ração em Goiânia',
