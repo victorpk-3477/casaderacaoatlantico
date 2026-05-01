@@ -176,7 +176,7 @@ export default function GerenciadorPrioridades({ produtos, onProdutosChange }) {
           <li><strong>Prioridade 1</strong> = Produto mais importante (aparece primeiro)</li>
           <li>Produtos com fundo verde são os 3 primeiros</li>
           <li>Use os botões ↑↓ para reordenar ou digite a prioridade diretamente</li>
-          <li>As mudanças só são salvas quando você clicar em "Salvar"</li>
+          <li>As mudanças só são salvas quando você clicar em &quot;Salvar&quot;</li>
         </ul>
       </div>
     </div>
