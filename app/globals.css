@@ -99,7 +99,7 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('/fachada.jpg') center / cover no-repeat;
+  background: url('/casaderacaoatlantico/fachada.jpg') center / cover no-repeat;
   filter: blur(3px) brightness(0.9);
   transform: scale(1.1);
   z-index: 0;
@@ -296,7 +296,7 @@ main {
    ============================================================ */
 
 .cra-main {
-  background: url('/MD1_4003\ \(1\).jpg') center / cover no-repeat;
+  background: url('/casaderacaoatlantico/MD1_4003 (1).jpg') center / cover no-repeat;
   background-size: cover;
   min-height: 100vh;
 }
