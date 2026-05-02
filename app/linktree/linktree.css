@@ -1,5 +1,5 @@
 .linktree-page {
-  background: url('/MD1_4003 (1).jpg') no-repeat center center fixed;
+  background: var(--background-hero-image) no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
 }

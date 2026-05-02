@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:gh-pages": "NEXT_PUBLIC_BASE_PATH=/casaderacaoatlantico NEXT_PUBLIC_ASSET_PREFIX=/casaderacaoatlantico/ next build",
     "start": "next start",
     "lint": "next lint",
     "deploy": "npm run build:gh-pages"
