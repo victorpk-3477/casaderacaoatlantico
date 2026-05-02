@@ -99,7 +99,7 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('/casaderacaoatlantico/fachada.jpg') center / cover no-repeat;
+  background: var(--background-fachada-image) center / cover no-repeat;
   filter: blur(3px) brightness(0.9);
   transform: scale(1.1);
   z-index: 0;
@@ -167,7 +167,7 @@ main {
   max-width: 100%;
   align-items: center;
   background: linear-gradient(rgba(1, 37, 83, 0.623), rgba(5, 55, 121, 0.644)),
-              url('/casaderacaoatlantico/MD1_4003 (1).jpg') center / cover no-repeat;
+              var(--background-hero-image) center / cover no-repeat;
 }
 
 .cra-hero-carousel {
@@ -186,6 +186,7 @@ main {
 
 .cra-hero-carousel .cra-carrossel {
   height: 600px;
+  background-color: rgba(15, 114, 28, 0.61);
 }
 
 .cra-hero-content {
@@ -296,7 +297,7 @@ main {
    ============================================================ */
 
 .cra-main {
-  background: url('/casaderacaoatlantico/MD1_4003 (1).jpg') center / cover no-repeat;
+  background: var(--background-hero-image) center / cover no-repeat;
   background-size: cover;
   min-height: 100vh;
 }
@@ -810,14 +811,16 @@ main {
   .cra-hero-carousel {
     padding: 8px;
     border-radius: 12px;
+
   }
 
   /* Altura unificada — sem conflito */
   .cra-hero-carousel .cra-carrossel,
   .cra-carrossel {
-    height: 240px;
+    height: 400px;
     padding: 8px;
     border-radius: 12px;
+    background-color: rgba(15, 114, 28, 0.61);
   }
 
   .cra-carrossel-container {
