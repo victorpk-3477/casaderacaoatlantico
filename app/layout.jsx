@@ -2,6 +2,7 @@ import './globals.css';
 import { Fraunces } from 'next/font/google';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { withPublicPath } from '@/lib/publicPath';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { pageDescriptions, pageKeywords, metadataDefaults, openGraphDefaults, twitterDefaults, SITE_URL, LOGO_URL, HERO_IMAGE_URL, viewportConfig } from '@/lib/seoConfig';
 import { generateLocalBusinessSchema, generateOrganizationSchema, generateWebPageSchema, SchemaScript } from '@/lib/schemaMarkup';
 
@@ -83,6 +84,7 @@ export default function RootLayout({ children }) {
           notificationSound={false}
           avatar={logoPath}
         />
+        <SpeedInsights />
         {children}
       </body>
     </html>
