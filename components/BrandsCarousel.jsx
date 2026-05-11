@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import './BrandsCarousel.css';
@@ -123,12 +124,15 @@ export default function BrandsCarousel({ brands = defaultBrands, selectedBrand =
                   }}
                 >
                   {brand.logo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
+                    <Image
                       src={withPublicPath(brand.logo)}
-                      alt={brand.name}
+                      alt={`${brand.name} - Marca de ração disponível em Goiânia`}
                       title={brand.name}
                       className="brand-logo"
+                      width={160}
+                      height={100}
+                      style={{ objectFit: 'contain' }}
+                      loading="lazy"
                     />
                   ) : (
                     <span className="brand-text">Todos</span>

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import { withPublicPath } from '@/lib/publicPath';
@@ -28,6 +29,7 @@ export default function CarrosselPromocoes() {
       perView: 4,
       spacing: 15,
     },
+
     breakpoints: {
       '(max-width: 768px)': {
         slides: {
@@ -37,10 +39,20 @@ export default function CarrosselPromocoes() {
       },
       '(max-width: 480px)': {
         slides: {
-          perView: 1.3,
+          perView: 1,
           spacing: 5,
         },
       },
+    },
+
+    created(slider) {
+      slider.interval = setInterval(() => {
+        slider.next();
+      }, 2000); // troca a cada 2 segundos
+    },
+
+    destroyed(slider) {
+      clearInterval(slider.interval);
     },
   });
 
@@ -48,9 +60,12 @@ export default function CarrosselPromocoes() {
     <div ref={sliderRef} className="keen-slider cra-carrossel-promocoes">
       {promocoes.map((image) => (
         <div key={image} className="keen-slider__slide cra-carrossel-item">
-          <img
+          <Image
             src={withPublicPath(`/Promocao/${image}`)}
-            alt={`Promoção ${image}`}
+            alt={`Promoção - Casa de Ração Atlântico em Goiânia`}
+            width={360}
+            height={280}
+            style={{ objectFit: 'contain'}}
             loading="lazy"
             onError={(e) => {
               e.target.src = withPublicPath('/placeholder.jpg');

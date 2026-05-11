@@ -8,6 +8,7 @@ import React, {
   useMemo,
   useState
 } from 'react';
+import Image from 'next/image';
 import { reducer } from '@/lib/whatsappReducer';
 import { WhatsappSVG, CloseSVG, CheckSVG, SendSVG } from './Icons';
 import { withPublicPath } from '@/lib/publicPath';
@@ -218,7 +219,7 @@ export function FloatingWhatsApp({
       >
         <header className="chatHeader">
           <div className="avatar">
-            <img src={avatar} width="60" height="60" alt="whatsapp-avatar" />
+            <Image src={avatar} width={60} height={60} alt="whatsapp-avatar" />
           </div>
           <div className="status">
             <span className="statusTitle">{accountName}</span>

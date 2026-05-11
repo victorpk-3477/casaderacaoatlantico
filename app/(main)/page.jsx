@@ -22,9 +22,6 @@ export default function Home() {
       <section className="cra-fachada">
         <div className="cra-fachada-overlay">
           <div className="cra-fachada-content">
-            <h1 className="cra-title cra-fachada-title">
-              Promoções em destaque
-            </h1>
             <CarrosselPromocoes />
           </div>
         </div>

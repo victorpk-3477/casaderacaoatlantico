@@ -1,0 +1,8 @@
+.cra-carrossel-item {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.cra-carrossel-item img {
+  border-radius: 16px;
+}

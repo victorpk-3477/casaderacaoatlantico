@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import './Header.css';
@@ -19,10 +20,13 @@ export default function Header() {
   return (
     <header className="cra-header-bar">
       <Link href="/" onClick={closeMenu}>
-        <img
+        <Image
           className="cra-logo"
           src={withPublicPath('/logo.svg')}
           alt="Logo Casa de Ração Atlântico"
+          width={140}
+          height={40}
+          style={{ objectFit: 'contain' }}
         />
       </Link>
 

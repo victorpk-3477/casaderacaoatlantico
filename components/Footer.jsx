@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { withPublicPath } from '@/lib/publicPath';
 
 export default function Footer() {
@@ -8,9 +9,12 @@ export default function Footer() {
       <div className="cra-footer-content">
         <div className="cra-footer-info">
           <div className="cra-footer-info-logo">
-            <img
+            <Image
               src={withPublicPath('/logo roda pe.png')}
               alt="Logo Casa de Ração Atlântico"
+              width={140}
+              height={140}
+              style={{ objectFit: 'contain' }}
             />
             <div className="cra-footer-social">
               <a

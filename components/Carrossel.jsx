@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { withPublicPath } from '@/lib/publicPath';
 
@@ -38,7 +39,13 @@ export default function Carrossel() {
       }}>
         {fotos.map((n) => (
           <div key={n} className="cra-carrossel-item">
-            <img src={withPublicPath(`/Fotos/foto (${n}).jpg`)} alt={`Foto ${n}`} />
+            <Image
+              src={withPublicPath(`/Fotos/foto (${n}).jpg`)}
+              alt={`Foto ${n}`}
+              width={720}
+              height={480}
+              style={{ objectFit: 'cover' }}
+            />
           </div>
         ))}
       </div>

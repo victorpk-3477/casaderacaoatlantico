@@ -1,75 +1,69 @@
 'use client';
 
+// app/(main)/produtos/ProdutosContent.jsx
+// VERSÃO SUPABASE — carrega produtos do banco em vez do localStorage
+
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import Link from 'next/link';
 import ProductCard from '@/components/ProductCard';
 import BrandsCarousel from '@/components/BrandsCarousel';
-import { brands, produtosMock } from '@/lib/produtosData';
-import { carregarProdutosSalvos } from '@/lib/produtosStorage';
+import { brands, getBrandSlug } from '@/lib/produtosData';          // mantém apenas o array de marcas
+import { carregarProdutos } from '@/lib/produtosStorage'; // agora busca do Supabase
 import './produtos.css';
 
-const PRODUCTS_PER_LOAD = 12; // Quantidade de produtos carregados por vez
+const PRODUCTS_PER_LOAD = 12;
 
 export default function ProdutosContent() {
   const [selectedBrand, setSelectedBrand] = useState('Todos');
   const [visibleProducts, setVisibleProducts] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [produtosAtuais, setProdutosAtuais] = useState(produtosMock);
+  const [produtosAtuais, setProdutosAtuais] = useState([]);
+  const [carregandoInicial, setCarregandoInicial] = useState(true);
   const observerRef = useRef();
 
+  // Carrega produtos do Supabase na montagem
   useEffect(() => {
-    const savedProdutos = carregarProdutosSalvos();
-    if (savedProdutos) {
-      setProdutosAtuais(savedProdutos);
+    async function fetchProdutos() {
+      setCarregandoInicial(true);
+      const dados = await carregarProdutos();
+      if (dados) {
+        setProdutosAtuais(dados);
+      }
+      setCarregandoInicial(false);
     }
+    fetchProdutos();
   }, []);
 
-  // Filtrar e ordenar produtos por prioridade
+  // Filtra e ordena por prioridade (o Supabase já retorna ordenado,
+  // mas mantemos o filtro de marca no cliente)
   const produtosFiltrados = React.useMemo(() => {
-    let produtos = selectedBrand === 'Todos'
-      ? produtosAtuais
-      : produtosAtuais.filter((produto) => produto.marca === selectedBrand);
-
-    // Ordenar por prioridade (menor número = maior prioridade)
-    return [...produtos].sort((a, b) => (a.prioridade || 999) - (b.prioridade || 999));
+    if (selectedBrand === 'Todos') return produtosAtuais;
+    return produtosAtuais.filter((p) => p.marca === selectedBrand);
   }, [selectedBrand, produtosAtuais]);
 
-  // Reset visible products quando a marca ou o ranking de produtos muda
+  // Reset dos produtos visíveis quando muda a marca ou a lista base
   useEffect(() => {
     setVisibleProducts(produtosFiltrados.slice(0, PRODUCTS_PER_LOAD));
-    setIsLoading(false); // Reset loading state
-  }, [selectedBrand, produtosFiltrados]);
-
-  // Atualizar hasMore quando produtosFiltrados muda
-  useEffect(() => {
     setHasMore(produtosFiltrados.length > PRODUCTS_PER_LOAD);
+    setIsLoading(false);
   }, [produtosFiltrados]);
 
-  // Função para carregar mais produtos
+  // Carrega mais produtos (infinite scroll)
   const loadMoreProducts = useCallback(() => {
     if (isLoading || !hasMore) return;
 
     setIsLoading(true);
-
-    // Simular delay de carregamento (pode ser removido em produção)
-    setTimeout(() => {
-      setVisibleProducts(prevVisible => {
-        const currentLength = prevVisible.length;
-        const nextProducts = produtosFiltrados.slice(
-          currentLength,
-          currentLength + PRODUCTS_PER_LOAD
-        );
-
-        const newVisibleProducts = [...prevVisible, ...nextProducts];
-        setHasMore(newVisibleProducts.length < produtosFiltrados.length);
-        setIsLoading(false);
-
-        return newVisibleProducts;
-      });
-    }, 500); // 500ms de delay para simular carregamento
+    setVisibleProducts((prev) => {
+      const next = produtosFiltrados.slice(prev.length, prev.length + PRODUCTS_PER_LOAD);
+      const updated = [...prev, ...next];
+      setHasMore(updated.length < produtosFiltrados.length);
+      setIsLoading(false);
+      return updated;
+    });
   }, [produtosFiltrados, isLoading, hasMore]);
 
-  // Intersection Observer para detectar quando chegar no final
+  // Intersection Observer para detectar o fim da lista
   const lastProductRef = useCallback(
     (node) => {
       if (isLoading) return;
@@ -89,10 +83,25 @@ export default function ProdutosContent() {
     [isLoading, hasMore, loadMoreProducts]
   );
 
+  
+
+  // Tela de carregamento inicial
+  if (carregandoInicial) {
+    return (
+      <div className="produtos-wrapper">
+        <div className="produtos-container">
+          <div className="loading-container" style={{ minHeight: '60vh', justifyContent: 'center' }}>
+            <div className="loading-spinner"></div>
+            <p>Carregando produtos...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="produtos-wrapper">
       <div className="produtos-container">
-
 
         {/* BRANDS CAROUSEL */}
         <BrandsCarousel
@@ -100,6 +109,8 @@ export default function ProdutosContent() {
           selectedBrand={selectedBrand}
           onBrandClick={setSelectedBrand}
         />
+
+
 
         {/* GRID DE PRODUTOS */}
         <div className="produtos-grid">
@@ -158,6 +169,7 @@ export default function ProdutosContent() {
             Fale com a gente
           </a>
         </div>
+
       </div>
     </div>
   );

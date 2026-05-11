@@ -1,9 +1,35 @@
+import Image from 'next/image';
 import './linktree.css';
 import { withPublicPath } from '@/lib/publicPath';
+import { pageDescriptions, pageKeywords, SITE_URL, HERO_IMAGE_URL } from '@/lib/seoConfig';
 
 export const metadata = {
-  title: 'Links Úteis | Casa de Ração Atlântico',
-  description: 'Acesso rápido aos nossos canais: WhatsApp, Instagram, Facebook, mapa, avaliações e mais.',
+  title: 'Links e Redes Sociais - Casa de Ração Atlântico | Goiânia',
+  description: pageDescriptions.linktree,
+  keywords: pageKeywords.linktree,
+  alternates: {
+    canonical: `${SITE_URL}/linktree`,
+  },
+  openGraph: {
+    title: 'Links e Redes Sociais - Casa de Ração Atlântico',
+    description: pageDescriptions.linktree,
+    url: `${SITE_URL}/linktree`,
+    type: 'website',
+    images: [
+      {
+        url: HERO_IMAGE_URL,
+        width: 1200,
+        height: 630,
+        alt: 'Links da Casa de Ração Atlântico',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Links e Redes Sociais - Casa de Ração Atlântico',
+    description: pageDescriptions.linktree,
+    images: [HERO_IMAGE_URL],
+  },
 };
 
 const socialLinks = [
@@ -77,7 +103,13 @@ export default function LinktreePage() {
         {/* HEADER */}
         <div className="linktree-header">
           <div className="linktree-logo">
-            <img src={getIconSrc('/logo roda pe.png')} alt="Casa de Ração Atlântico" />
+            <Image
+              src={getIconSrc('/logo roda pe.png')}
+              alt="Casa de Ração Atlântico"
+              width={140}
+              height={140}
+              style={{ objectFit: 'contain' }}
+            />
           </div>
           <h1 className="linktree-title">Casa de Ração Atlântico</h1>
           <p className="linktree-subtitle">Rações, acessórios e produtos para seu pet</p>
@@ -94,7 +126,13 @@ export default function LinktreePage() {
                 aria-label={social.title}
                 title={social.title}
               >
-                <img src={getIconSrc(social.icon)} alt={social.title} />
+                <Image
+                  src={getIconSrc(social.icon)}
+                  alt={social.title}
+                  width={32}
+                  height={32}
+                  style={{ objectFit: 'contain' }}
+                />
               </a>
             ))}
           </div>
@@ -117,7 +155,13 @@ export default function LinktreePage() {
                     color: '#fff',
                   }}
                 >
-                  <img src={getIconSrc(link.icon)} alt={link.title} />
+                  <Image
+                    src={getIconSrc(link.icon)}
+                    alt={link.title}
+                    width={30}
+                    height={30}
+                    style={{ objectFit: 'contain' }}
+                  />
                 </div>
                 <div className="linktree-link-text">
                   <h3>{link.title}</h3>

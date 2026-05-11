@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Carrossel from '@/components/Carrossel';
 
 export default function SobreNosContent() {
@@ -173,6 +174,45 @@ export default function SobreNosContent() {
               <i className="fas fa-map-location-dot" style={{ marginRight: '10px' }}></i>
               Como Chegar
             </a>
+          </section>
+
+          <section style={{ marginBottom: '50px', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '26px', color: '#003759', marginBottom: '20px' }}>
+              Explore nossos produtos com atendimento local
+            </h2>
+            <p style={{ maxWidth: '760px', margin: '0 auto 30px', color: '#555', fontSize: '16px' }}>
+              Somos o pet shop de referência em Goiânia para rações, antipulgas, suplementos e rações para castrados. Conheça nossas marcas e categorias com entrega local rápida.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}>
+              <Link
+                href="/produtos"
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: '#25D366',
+                  color: '#ffffff',
+                  padding: '14px 24px',
+                  borderRadius: '40px',
+                  textDecoration: 'none',
+                  fontWeight: '700',
+                }}
+              >
+                Ver Produtos
+              </Link>
+              <Link
+                href="/marcas"
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: '#003759',
+                  color: '#ffffff',
+                  padding: '14px 24px',
+                  borderRadius: '40px',
+                  textDecoration: 'none',
+                  fontWeight: '700',
+                }}
+              >
+                Ver Marcas
+              </Link>
+            </div>
           </section>
         </div>
       </div>
